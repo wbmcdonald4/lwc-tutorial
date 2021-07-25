@@ -1,0 +1,6 @@
+<template>
+    <lightning-input type="checkbox" label="Show Div" onchange={showDivHandler}></lightning-input>
+    <template if:true={displayDiv} for:each={cityList} for:item="city">
+        <p key={city}>{city}</p>
+    </template>
+</template>

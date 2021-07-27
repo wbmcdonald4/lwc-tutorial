@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Create A New Pulse">
+        <lightning-record-edit-form object-api-name='Pulse__c'>
+            <p><lightning-input-field field-name='Name'></lightning-input-field></p>
+            <p><lightning-input-field field-name='Pulse_Rating__c'></lightning-input-field></p>
+            <p><lightning-input-field field-name='Date_Set__c'></lightning-input-field></p>
+            <p><lightning-input-field field-name='Notes__c'></lightning-input-field></p>
+            <p><lightning-input-field class="slds-hide" field-name='Account__c' value={recordId}></lightning-input-field></p>
+
+            <p><lightning-button type="submit" variant="brand" name="save" label="Create Pulse"></lightning-button></p>
+        </lightning-record-edit-form>
+    </lightning-card>
+    <lightning-card title="All Pulses">
+        <ul>
+            <template if:true={responseReceived}>
+                <template for:each={pulses.data} for:item="pulse">
+                    <li key={pulse.Id}>
+                        <div class="slds-p-around-large lgc-bg">
+                            <lightning-tile label={pulse.Pulse_Rating__c} type="media">
+                                <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                                <p class="slds-truncate" title={pulse.Date_Set__c}>{pulse.Date_Set__c}</p>
+                                <p class="slds-truncate" title={pulse.Notes__c}>{pulse.Notes__c}</p>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

@@ -1,0 +1,27 @@
+.class0{
+    background-color: var(--pulse-color, white);
+}
+
+.class1{
+    background-color: var(--pulse-color, lightgreen);
+}
+
+.class2{
+    background-color: var(--pulse-color, green);
+}
+
+.class3{
+    background-color: var(--pulse-color, blue);
+}
+
+.class4{
+    background-color: var(--pulse-color, yellow);
+}
+
+.class5{
+    background-color: var(--pulse-color, orange);
+}
+
+.class6{
+    background-color: var(--pulse-color, red);
+}
